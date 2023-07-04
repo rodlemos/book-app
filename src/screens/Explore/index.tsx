@@ -6,7 +6,7 @@ import { ExploreCard } from "../../components/ExploreCard";
 import { Header } from "../../components/Header";
 import api from "../../services/api";
 import { Globals } from "../../styles/globals";
-import { formatGenres } from "../../utils/formatGenres";
+import { capitalizeString } from "../../utils/capitalizeString";
 import SubjectSelectModal from "../SubjectSelectModal";
 import { styles } from "./styles";
 
@@ -15,7 +15,7 @@ export default function Explore() {
   const [subject, setSubject] = useState("adventure");
   const [books, setBooks] = useState([]);
   const [openModal, setOpenModal] = useState(false);
-  const formattedGenre = formatGenres(subject);
+  const formattedGenre = capitalizeString(subject);
 
   function handleModalToggle() {
     setOpenModal((prevState) => !prevState);

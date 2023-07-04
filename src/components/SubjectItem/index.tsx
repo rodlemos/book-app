@@ -3,7 +3,7 @@ import React from "react";
 import { Text } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
 import { Globals } from "../../styles/globals";
-import { formatGenres } from "../../utils/formatGenres";
+import { capitalizeString } from "../../utils/capitalizeString";
 import { styles } from "./styles";
 
 interface Props {
@@ -17,7 +17,7 @@ export function SubjectItem({ subject, current, onSelect }: Props) {
     onSelect(subject);
   }
 
-  const formattedGenre = formatGenres(subject);
+  const formattedGenre = capitalizeString(subject);
 
   return (
     <RectButton activeOpacity={0.6} onPress={() => handleSelect(subject)}>
