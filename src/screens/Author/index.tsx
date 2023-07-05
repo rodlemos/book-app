@@ -11,8 +11,8 @@ import { CategoryDisplay } from "../../components/CategoryDisplay";
 import { Highlight } from "../../components/Highlight";
 import { authorData } from "../../data";
 import { Globals } from "../../styles/globals";
-import { addBookData } from "../../utils/addBookData";
-import { getBooks } from "../../utils/getBooks";
+import { getBooks } from "../../services/getBooks";
+import { mergeBooksData } from "../../utils/mergeBooksData";
 import { styles } from "./styles";
 
 interface Params {
@@ -34,13 +34,13 @@ export default function Author() {
   useEffect(() => {
     async function fetchBooks() {
       const trendsResult = await getBooks(authorData[author.id].trends.ids);
-      const trendsData = addBookData(
+      const trendsData = mergeBooksData(
         trendsResult,
         authorData[author.id].trends.info
       );
 
       const salesResult = await getBooks(authorData[author.id].sales.ids);
-      const salesData = addBookData(
+      const salesData = mergeBooksData(
         salesResult,
         authorData[author.id].sales.info
       );

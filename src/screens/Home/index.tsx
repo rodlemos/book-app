@@ -8,9 +8,9 @@ import { CategoryDisplay } from "../../components/CategoryDisplay";
 import { Header } from "../../components/Header";
 import { authors, homeData } from "../../data";
 import { Globals } from "../../styles/globals";
-import { addBookData } from "../../utils/addBookData";
-import { getBooks } from "../../utils/getBooks";
+import { getBooks } from "../../services/getBooks";
 import { styles } from "./styles";
+import { mergeBooksData } from "../../utils/mergeBooksData";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -21,10 +21,10 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       const trendsResults = await getBooks(homeData.trends.ids);
-      const trendsData = addBookData(trendsResults, homeData.trends.info);
+      const trendsData = mergeBooksData(trendsResults, homeData.trends.info);
 
       const recommendedResults = await getBooks(homeData.recommended.ids);
-      const recommendedData = addBookData(
+      const recommendedData = mergeBooksData(
         recommendedResults,
         homeData.recommended.info
       );

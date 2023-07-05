@@ -1,12 +1,12 @@
-import api from "../services/api";
+import api from "./api";
 
 export async function getBooks(ids: string[]) {
-  const formattedBooksIDs = ids.map((id) => `ISBN:${id}`).join(",");
+  const apiRequestFormattedIDs = ids.map((id) => `ISBN:${id}`).join(",");
 
   try {
     const response = await api.get("/api/books", {
       params: {
-        bibkeys: formattedBooksIDs,
+        bibkeys: apiRequestFormattedIDs,
         format: "json",
         jscmd: "data",
       },

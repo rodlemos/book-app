@@ -13,8 +13,8 @@ import IconButton from "../../components/IconButton";
 import { authors, bookData } from "../../data";
 import { useBooks } from "../../hooks/useBooks";
 import { Globals } from "../../styles/globals";
-import { addBookData } from "../../utils/addBookData";
-import { getBooks } from "../../utils/getBooks";
+import { mergeBooksData } from "../../utils/mergeBooksData";
+import { getBooks } from "../../services/getBooks";
 import { styles } from "./styles";
 
 interface Params {
@@ -37,7 +37,7 @@ export default function Book() {
   useEffect(() => {
     async function fetchBooks() {
       const results = await getBooks(bookData.recommended.ids);
-      const booksData = addBookData(results, bookData.recommended.info);
+      const booksData = mergeBooksData(results, bookData.recommended.info);
 
       setRelated(booksData);
     }
