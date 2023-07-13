@@ -18,8 +18,8 @@ export default function Basket() {
   }
 
   useEffect(() => {
-    const values = basketBooks?.map((item) => Number(item.price));
-    const sum = values.reduce((acc, cur) => acc + cur, 0);
+    const priceValues = basketBooks?.map((item) => Number(item.price) * 100);
+    const sum = priceValues.reduce((acc, cur) => acc + cur, 0) / 100;
     const formattedTotal = sum.toLocaleString("en-US", {
       style: "currency",
       currency: "USD",
