@@ -6,6 +6,7 @@ import { RectButton } from "react-native-gesture-handler";
 import { BookDTO } from "../../DTOs/bookDTO";
 import { Globals } from "../../styles/globals";
 import { styles } from "./styles";
+import { StringFormat } from "../../utils/StringFormat";
 
 interface Props {
   category: string;
@@ -64,7 +65,7 @@ export function CategoryDisplay({ books, category, darkText, scroll }: Props) {
                 darkText && Globals.darkBlueText,
               ]}
             >
-              {book.title}
+              {StringFormat.charLimit(book.title)}
             </Text>
             <View style={styles.infoWrapper}>
               <View>
