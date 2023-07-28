@@ -9,18 +9,25 @@
 </p>
 
 
-![cover](.github/cover.png?style=flat)
+![cover](https://github.com/rodlemos/book-app/blob/main/src/assets/cover.jpg)
 
 
 ## 📱 Projeto
-Aplicativo loja de livros
+Aplicativo simples de loja de livros visando a utilização de uma API pública. O app possui uma página incial com recomendação de livros e autores, também é possível filtrar livros por gêneros. 
 
 
 ## :hammer_and_wrench: Features
+-  Integração com API pública para busca de dados sobre os livros e autores;
+-  Sessão de autores;
+-  Possibilidade de favoritar livros;
+-  Filtro de livros por gênero;
+-  Cesta de livros;
+-  Notificações toast;
 
-
-## ✨ Tecnologias 
-
+## ⚙ Tecnologias
+* <img src="https://img.shields.io/badge/React_Native-20232A?style=flat&logo=react&logoColor=61DAFB"/>
+* <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white"/>
+* <img src="https://img.shields.io/badge/Expo-F8F8F5?style=flat&logo=expo&logoColor=000020"/>
 
 ## Executando o projeto
 
@@ -30,6 +37,11 @@ Em seguida, inicie o projeto.
 ```cl
 expo start
 ```
+
+## 💡 Ideias para futuras versões
+-  [ ] Adição de usuário e perfil;
+-  [ ] Personalização da página inicial conforme preferências do usuário;
+-  [ ] Busca por livros;
 
 ## 📄 Licença
 
